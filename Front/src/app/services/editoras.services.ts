@@ -11,8 +11,8 @@ export class EditorasServices {
   private http = inject(HttpClient)
   private base = environment.apiBase
 
-  listar(): Observable<Editora[]>{
+  listar(): Observable<Editora[]> {
     const url = `${this.base}api/editoras`
-    return this.http.get<[]>(url)
+    return this.http.get<Editora[]>(url)
   }
 }

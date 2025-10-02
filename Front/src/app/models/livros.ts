@@ -11,8 +11,8 @@ export interface Livro {
     ano: number;
     preco: number;
     estoque: number;
-    desconto: string;
-    disponivel: number;
+    desconto: number;
+    disponivel: boolean;
     dimensoes: string,
     peso: number;
 }
