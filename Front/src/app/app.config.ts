@@ -7,6 +7,8 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideHttpClient()
+    provideHttpClient() // isso configura regras de segurança para a url
   ]
 };
+
+// configuração das rotas

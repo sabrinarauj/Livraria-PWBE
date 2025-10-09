@@ -24,7 +24,7 @@ export class AuthService {
   token = () => this._access();
 
   login(username: string, password: string): Observable<TokenPair> {
-    const AUTH_URL = `${this.base}/token/`;
+    const AUTH_URL = `${this.base}api/token/`;
     
     
     return this.http.post<TokenPair>(AUTH_URL, { username, password }).pipe(
@@ -32,12 +32,12 @@ export class AuthService {
         if (tokens.access) { this._access.set(tokens.access); storage.set('access', tokens.access); }
         if (tokens.refresh) { this._refresh.set(tokens.refresh); storage.set('refresh', tokens.refresh); }
       })
-      
+    
     );
   }
   
   refresh(): Observable<{ access: string }> {
-    const REFRESH_URL = `${this.base}/refresh/`;
+    const REFRESH_URL = `${this.base}api/refresh/`;
     const refresh = this._refresh();
     return this.http.post<{ access: string }>(REFRESH_URL, { refresh }).pipe(
       tap(t => { this._access.set(t.access); storage.set('access', t.access); })

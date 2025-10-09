@@ -5,7 +5,7 @@ import { ReactiveFormsModule, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login.component',
-  imports: [],
+  imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
