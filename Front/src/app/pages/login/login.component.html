@@ -1,6 +1,8 @@
 <section style="max-width:420px;margin:3rem auto;padding:0 1rem">
-    <h1 style="margin:0 0 1rem">Entrar</h1>
 
+
+  <div class="container">
+    <h1 class="titulo">Entrar</h1>
     <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
       <div style="display:flex; flex-direction:column; gap:.5rem">
         <label>
@@ -16,13 +18,12 @@
         <button type="submit" [disabled]="form.invalid || loading()">Entrar</button>
       </div>
     </form>
+  </div>
+  @if (error()) {
+  <p style="color:#c62828; margin-top:.75rem">{{ error() }}</p>
+  }
 
-    @if (error()) {
-      <p style="color:#c62828; margin-top:.75rem">{{ error() }}</p>
-    }
-
-    <p style="margin-top:1rem">
-      <a routerLink="/">Voltar</a>
-    </p>
-  </section>
-
+  <p style="margin-top:1rem">
+    <a routerLink="/">Voltar</a>
+  </p>
+</section>
