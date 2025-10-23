@@ -4,6 +4,7 @@ import { AutoresComponent } from './pages/authors/authors.component';
 import { EditorasComponent } from './pages/editoras/editoras.component';
 import { LivrosComponent } from './pages/livros/livros.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PesquisaComponent } from './pages/filtro/filtro.component';
 import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
@@ -13,6 +14,7 @@ export const routes: Routes = [
     { path: 'autores', component: AutoresComponent, canActivate: [authGuard] },
     { path: 'editoras', component: EditorasComponent, canActivate: [authGuard] },
     { path: 'livros', component: LivrosComponent, canActivate: [authGuard] },
+    { path: 'pesquisa', component: PesquisaComponent },
 ];
 
 // rotas das páginas 
